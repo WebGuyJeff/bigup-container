@@ -1,41 +1,105 @@
 /**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
+ * Import WordPress Dependencies.
  */
 import { __ } from '@wordpress/i18n';
+import {
+	useBlockProps,
+	InnerBlocks,
+	InspectorControls,
+} from '@wordpress/block-editor';
+import {
+	SelectControl,
+	PanelBody,
+	PanelRow,
+} from '@wordpress/components';
 
 /**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
- */
-import { useBlockProps } from '@wordpress/block-editor';
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ * Import local editor Styles.
  */
 import './editor.scss';
 
 /**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
+ * Edit function.
+ * 
+ * This function describes the structure of the block in the context of the editor.
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit( { attributes, setAttributes, isSelected } ) {
+
+	let {
+		containerClasses
+	} = attributes;
+
+	/**
+	 * Control options.
+	 * 
+	 * These are the settings label/values to populate the dropdown control.
+	 *
+	 */
+	const widthOptions = [
+		{ label: 'Default', value: 'toecapsContainer' },
+		{ label: 'Full-width', value: 'toecapsContainer toecapsContainer-full' },
+		{ label: 'Narrow', value: 'toecapsContainer toecapsContainer-narrow' }
+	]
+
+	/**
+	 * Set block attributes.
+	 */
+	const blockProps = useBlockProps( {
+		className: containerClasses,
+	} );
+
+	/**
+	 * Set block attributes with 'selected' state.
+	 */
+	const blockPropsSelected = useBlockProps( {
+		className: containerClasses + ' toecapsContainer-selected',
+	} );
+
 	return (
-		<p {...useBlockProps()}>
-			{__(
-				'Toecaps Container – hello from the editor!',
-				'toecaps-container'
+		<>
+			<InspectorControls>
+				<PanelBody
+					title={ __( 'Container Width' ) }
+					initialOpen={ true }
+				>
+					<PanelRow>
+						<SelectControl
+							label="width"
+							labelPosition="Left"
+							title="containerClasses"
+							value={ containerClasses }
+							options={ widthOptions }
+							onChange={ ( value ) =>
+								setAttributes( { containerClasses: value } )
+							}
+						/>
+					</PanelRow>
+				</PanelBody>
+			</InspectorControls>
+
+
+			{isSelected && (
+				<div { ...blockPropsSelected }>
+					{__(
+						'Toecaps Container - Thanks for selecting me',
+						'toecaps-container'
+					)}
+					<InnerBlocks />
+				</div>
 			)}
-		</p>
+
+			{!isSelected && (
+				<div { ...blockProps }>
+					{__(
+						'Toecaps Container - Can\'t we be friends?',
+						'toecaps-container'
+					)}
+					<InnerBlocks />
+				</div>
+			)}
+
+		</>
 	);
 }

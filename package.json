@@ -1,9 +1,9 @@
 {
 	"name": "toecaps-container",
 	"version": "0.1.0",
-	"description": "Example block written with ESNext standard and JSX support – build step required.",
-	"author": "The WordPress Contributors",
-	"license": "GPL-2.0-or-later",
+	"description": "A complimentary plugin for the Toecaps theme which adds an adjustable width container block.",
+	"author": "Jefferson Real",
+	"license": "GPL-3.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
 		"build": "wp-scripts build",

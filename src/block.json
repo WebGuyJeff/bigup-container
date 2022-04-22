@@ -6,12 +6,19 @@
 	"title": "Toecaps Container",
 	"category": "widgets",
 	"icon": "smiley",
-	"description": "Example block written with ESNext standard and JSX support – build step required.",
+	"description": "Example block written with ESNext standard and JSX support - build step required.",
 	"supports": {
 		"html": false
 	},
 	"textdomain": "toecaps-container",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css"
+	"style": "file:./style-index.css",
+	"attributes": {
+		"containerClasses": {
+			"type": "string",
+			"enum": [ "toecapsContainer", "toecapsContainer toecapsContainer-full", "toecapsContainer toecapsContainer-narrow" ],
+			"default": "container"
+		}
+	}
 }
