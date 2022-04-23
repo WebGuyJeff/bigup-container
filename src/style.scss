@@ -15,21 +15,28 @@
 }
 
 @media (min-width: 768px) {
+
 	.toecapsContainer {
 		width: 100%;
 	}
 }
+
 @media (min-width: 1024px) {
+
 	.toecapsContainer {
 		width: 984px;
 	}
 }
+
 @media (min-width: 1280px) {
+
 	.toecapsContainer {
 		width: 1160px;
 	}
 }
+
 @media (min-width: 1536px) {
+
 	.toecapsContainer {
 		width: 1280px;
 	}
@@ -38,16 +45,20 @@
 .toecapsContainer-full {
 	width: 100%;
 }
+
 .toecapsContainer-narrow {
 	width: 100%;
 }
 
 @media (min-width: 768px) {
+
 	.toecapsContainer-narrow {
 		width: 768px;
 	}
 }
+
 @media (min-width: 1536px) {
+
 	.toecapsContainer-narrow {
 		width: 1024px;
 	}

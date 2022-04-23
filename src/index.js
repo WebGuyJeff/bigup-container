@@ -40,9 +40,5 @@ registerBlockType('create-block/toecaps-container', {
 	/**
 	 * @see ./example.js
 	 */
-	example: {
-		attributes: {
-			containerClasses: 'toecapsContainer',
-		},
-	},
-} );
+	example: Example,
+});
