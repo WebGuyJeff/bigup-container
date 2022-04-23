@@ -15,12 +15,12 @@ import {
  *
  * @return {WPElement} Element to render.
  */
-export default function save( attributes ) {
+export default function Save( attributes ) {
 
 /* jeffDebug */
 /* Why is this attribute double-nested? */
 /* This is not the case in edit.js */
-console.log( 'contattributes.attributes.containerClassesainerClasses' );
+console.log( 'attributes.attributes.containerClasses' );
 console.log( attributes.attributes.containerClasses );
 
 	/**
@@ -29,9 +29,6 @@ console.log( attributes.attributes.containerClasses );
 	const {
 		containerClasses,
 	} = attributes.attributes;
-
-console.log( 'containerClasses' );
-console.log( containerClasses );
 
 	/**
 	 * Add container classname(s) to props
@@ -42,10 +39,6 @@ console.log( containerClasses );
 
 	return (
 		<div { ...blockProps  }>
-			{__(
-				'Toecaps Container - hello from the saved content!',
-				'toecaps-container'
-			)}
 			<InnerBlocks.Content />
 		</div>
 	);

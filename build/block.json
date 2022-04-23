@@ -5,8 +5,7 @@
 	"version": "0.1.0",
 	"title": "Toecaps Container",
 	"category": "widgets",
-	"icon": "smiley",
-	"description": "Example block written with ESNext standard and JSX support - build step required.",
+	"description": "A complimentary plugin for the Toecaps theme which adds an adjustable width container block.",
 	"supports": {
 		"html": false
 	},

@@ -18,7 +18,8 @@ import './style.scss';
  * Internal dependencies
  */
 import Edit from './edit';
-import save from './save';
+import Save from './save';
+import Example from './example';
 
 /**
  * Every block starts by registering a new block type definition.
@@ -34,5 +35,14 @@ registerBlockType('create-block/toecaps-container', {
 	/**
 	 * @see ./save.js
 	 */
-	save,
-});
+	save: Save,
+
+	/**
+	 * @see ./example.js
+	 */
+	example: {
+		attributes: {
+			containerClasses: 'toecapsContainer',
+		},
+	},
+} );

@@ -1,55 +1,39 @@
 === Toecaps Container ===
-Contributors:      The WordPress Contributors
-Tags:              block
+Contributors:      Jefferson Real
+Tags:              block, container, section, layout, full-width
 Tested up to:      5.9
 Stable tag:        0.1.0
-License:           GPL-2.0-or-later
-License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+License:           GPL-3.0-or-later
+License URI:       https://www.gnu.org/licenses/gpl-3.0.html
 
-Example block written with ESNext standard and JSX support - build step required.
+A complimentary plugin for the Toecaps theme which adds an adjustable width container block.
 
 == Description ==
 
-This is the long description. No limit, and you can use Markdown (as well as in the following sections).
+This block provides a container element to allow control of content width at a per-block level. With
+it, it is possible to set blocks to full-width, 'normal' column width and narrow width. The maximum
+width will be limited by the page template layout which, in the Toecaps theme is 100% of the screen
+width. Content width should be controlled at a content creation level, not a theme development level!
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+This is a _very_ simple plugin designed to be unobtrusive and somewhat free of design opinion. Due
+to it's simplicity, there are few dependencies and a tiny footprint.
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-e.g.
-
-1. Upload the plugin files to the `/wp-content/plugins/toecaps-container` directory, or install the plugin through the WordPress plugins screen directly.
-1. Activate the plugin through the 'Plugins' screen in WordPress
-
-
-== Frequently Asked Questions ==
-
-= A question that someone might have =
-
-An answer to that question.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
-
-== Screenshots ==
-
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+Install the plugin through the WP admin plugin screen by using the 'Add new' button and selecting
+the zip.
 
 == Changelog ==
 
 = 0.1.0 =
 * Release
 
-== Arbitrary section ==
+Phase 1 implemented offering 3 widths:
 
-You may provide arbitrary sections, in the same format as the ones above. This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation." Arbitrary sections will be shown below the built-in sections outlined above.
+**Default** - A responsive and sensible large column with a max width at 1280px.
+**Full-width** - 100% of parent width.
+**narrow** - A tighter responsive column with a max width of 1024px.
+
+ - No height affecting styles
+ - 24px padding
+ - Auto horizontal margin (self-centre)

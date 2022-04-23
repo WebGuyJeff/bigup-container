@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Toecaps Container
- * Description:       Example block written with ESNext standard and JSX support - build step required.
+ * Description:       A complimentary plugin for the Toecaps theme which adds an adjustable width container block.
  * Requires at least: 5.8
  * Requires PHP:      7.0
  * Version:           0.1.0

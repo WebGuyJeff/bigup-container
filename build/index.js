@@ -46,7 +46,8 @@ function Edit(_ref) {
   let {
     attributes,
     setAttributes,
-    isSelected
+    isSelected,
+    clientId
   } = _ref;
   let {
     containerClasses
@@ -82,6 +83,20 @@ function Edit(_ref) {
   const blockPropsSelected = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)({
     className: containerClasses + ' toecapsContainer-selected'
   });
+  /**
+   * Flag to check if innerBlocks is populated.
+   */
+
+  const hasInnerBlocks = () => {
+    const thisBlock = wp.data.select('core/block-editor').getBlock(clientId);
+
+    if (thisBlock) {
+      return !!thisBlock.innerBlocks.length;
+    } else {
+      return false;
+    }
+  };
+
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Container Width'),
     initialOpen: true
@@ -94,7 +109,34 @@ function Edit(_ref) {
     onChange: value => setAttributes({
       containerClasses: value
     })
-  })))), isSelected && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockPropsSelected, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Toecaps Container - Thanks for selecting me', 'toecaps-container'), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, null)), !isSelected && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Toecaps Container - Can\'t we be friends?', 'toecaps-container'), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, null)));
+  })))), isSelected && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockPropsSelected, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, null)), !isSelected && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, !hasInnerBlocks() && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "toecapsContainer-empty"
+  }, "I'm a width-adjustable container - put some blocks inside me!"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, null)));
+}
+
+/***/ }),
+
+/***/ "./src/example.js":
+/*!************************!*\
+  !*** ./src/example.js ***!
+  \************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ Example; }
+/* harmony export */ });
+/**
+ * Example function.
+ * 
+ * Defines example data to generate a preview in the block chooser.
+ *
+ * @return {object} Example attributes.
+ */
+function Example() {
+  return attributes = {
+    containerClasses: 'toecapsContainer'
+  };
 }
 
 /***/ }),
@@ -111,6 +153,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
 /* harmony import */ var _edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./edit */ "./src/edit.js");
 /* harmony import */ var _save__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./save */ "./src/save.js");
+/* harmony import */ var _example__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./example */ "./src/example.js");
 /**
  * Registers a new block provided a unique name and an object defining its behavior.
  *
@@ -132,6 +175,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 /**
  * Every block starts by registering a new block type definition.
  *
@@ -147,7 +191,16 @@ __webpack_require__.r(__webpack_exports__);
   /**
    * @see ./save.js
    */
-  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
+  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"],
+
+  /**
+   * @see ./example.js
+   */
+  example: {
+    attributes: {
+      containerClasses: 'toecapsContainer'
+    }
+  }
 });
 
 /***/ }),
@@ -160,7 +213,7 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ save; }
+/* harmony export */   "default": function() { return /* binding */ Save; }
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
@@ -183,13 +236,13 @@ __webpack_require__.r(__webpack_exports__);
  * @return {WPElement} Element to render.
  */
 
-function save(attributes) {
+function Save(attributes) {
   /* jeffDebug */
 
   /* Why is this attribute double-nested? */
 
   /* This is not the case in edit.js */
-  console.log('contattributes.attributes.containerClassesainerClasses');
+  console.log('attributes.attributes.containerClasses');
   console.log(attributes.attributes.containerClasses);
   /**
    * Wp attributes are an alias for React props.
@@ -198,8 +251,6 @@ function save(attributes) {
   const {
     containerClasses
   } = attributes.attributes;
-  console.log('containerClasses');
-  console.log(containerClasses);
   /**
    * Add container classname(s) to props
    */
@@ -207,7 +258,7 @@ function save(attributes) {
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
     className: containerClasses
   });
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Toecaps Container - hello from the saved content!', 'toecaps-container'), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.Content, null));
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.Content, null));
 }
 
 /***/ }),

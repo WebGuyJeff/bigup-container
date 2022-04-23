@@ -25,7 +25,7 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit( { attributes, setAttributes, isSelected } ) {
+export default function Edit( { attributes, setAttributes, isSelected, clientId } ) {
 
 	let {
 		containerClasses
@@ -57,6 +57,18 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 		className: containerClasses + ' toecapsContainer-selected',
 	} );
 
+	/**
+	 * Flag to check if innerBlocks is populated.
+	 */
+	const hasInnerBlocks = () => {
+		const thisBlock = wp.data.select( 'core/block-editor' ).getBlock( clientId );
+		if ( thisBlock ) {
+			return !! thisBlock.innerBlocks.length;
+		} else {
+			return false;
+		}
+	}
+
 	return (
 		<>
 			<InspectorControls>
@@ -79,22 +91,20 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				</PanelBody>
 			</InspectorControls>
 
-
-			{isSelected && (
+			{ isSelected && (
 				<div { ...blockPropsSelected }>
-					{__(
-						'Toecaps Container - Thanks for selecting me',
-						'toecaps-container'
-					)}
 					<InnerBlocks />
 				</div>
 			)}
 
-			{!isSelected && (
+			{ ! isSelected && (
 				<div { ...blockProps }>
-					{__(
-						'Toecaps Container - Can\'t we be friends?',
-						'toecaps-container'
+					{ ! hasInnerBlocks() && (
+						<span
+							className="toecapsContainer-empty"
+						>
+							I'm a width-adjustable container - put some blocks inside me!
+						</span>
 					)}
 					<InnerBlocks />
 				</div>
