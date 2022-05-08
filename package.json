@@ -1,7 +1,7 @@
 {
-	"name": "toecaps-container",
+	"name": "bigup-container",
 	"version": "0.1.0",
-	"description": "A complimentary plugin for the Toecaps theme which adds an adjustable width container block.",
+	"description": "An adjustable width container block to easily create mixed-width pages.",
 	"author": "Jefferson Real",
 	"license": "GPL-3.0-or-later",
 	"main": "build/index.js",

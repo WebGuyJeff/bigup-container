@@ -1,22 +1,22 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 2,
-	"name": "create-block/toecaps-container",
+	"name": "create-block/bigup-container",
 	"version": "0.1.0",
-	"title": "Toecaps Container",
+	"title": "Bigup Container",
 	"category": "widgets",
-	"description": "A complimentary plugin for the Toecaps theme which adds an adjustable width container block.",
+	"description": "An adjustable width container block to easily create mixed-width pages.",
 	"supports": {
 		"html": false
 	},
-	"textdomain": "toecaps-container",
+	"textdomain": "bigup-container",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
 	"attributes": {
 		"containerClasses": {
 			"type": "string",
-			"enum": [ "toecapsContainer", "toecapsContainer toecapsContainer-full", "toecapsContainer toecapsContainer-narrow" ],
+			"enum": [ "bigupContainer", "bigupContainer bigupContainer-full", "bigupContainer bigupContainer-narrow" ],
 			"default": "container"
 		}
 	}

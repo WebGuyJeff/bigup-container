@@ -26,7 +26,7 @@ import Example from './example';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType('create-block/toecaps-container', {
+registerBlockType('create-block/bigup-container', {
 	/**
 	 * @see ./edit.js
 	 */

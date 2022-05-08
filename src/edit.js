@@ -41,12 +41,12 @@ export default function Edit({
 	 *
 	 */
 	const widthOptions = [
-		{ label: 'Default', value: 'toecapsContainer' },
+		{ label: 'Default', value: 'bigupContainer' },
 		{
 			label: 'Full-width',
-			value: 'toecapsContainer toecapsContainer-full',
+			value: 'bigupContainer bigupContainer-full',
 		},
-		{ label: 'Narrow', value: 'toecapsContainer toecapsContainer-narrow' },
+		{ label: 'Narrow', value: 'bigupContainer bigupContainer-narrow' },
 	];
 
 	/**
@@ -60,7 +60,7 @@ export default function Edit({
 	 * Set block attributes with 'selected' state.
 	 */
 	const blockPropsSelected = useBlockProps({
-		className: containerClasses + ' toecapsContainer-selected',
+		className: containerClasses + ' bigupContainer-selected',
 	});
 
 	/**
@@ -80,7 +80,7 @@ export default function Edit({
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Container Width', 'toecaps-container' )} initialOpen={true}>
+				<PanelBody title={__('Container Width', 'bigup-container' )} initialOpen={true}>
 					<PanelRow>
 						<SelectControl
 							label="width"
@@ -105,8 +105,8 @@ export default function Edit({
 			{!isSelected && (
 				<div {...blockProps}>
 					{!hasInnerBlocks() && (
-						<span className="toecapsContainer-empty">
-							{ __("I'm a width-adjustable container - put some blocks inside me!", 'toecaps-container' ) }
+						<span className="bigupContainer-empty">
+							{ __("I'm a width-adjustable container - put some blocks inside me!", 'bigup-container' ) }
 						</span>
 					)}
 					<InnerBlocks />

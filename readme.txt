@@ -1,4 +1,4 @@
-=== Toecaps Container ===
+=== Bigup Container ===
 Contributors:      Jefferson Real
 Tags:              block, container, section, layout, full-width
 Tested up to:      5.9
@@ -6,14 +6,15 @@ Stable tag:        0.1.0
 License:           GPL-3.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-3.0.html
 
-A complimentary plugin for the Toecaps theme which adds an adjustable width container block.
+An adjustable width container block to easily create mixed-width pages.
 
 == Description ==
 
 This block provides a container element to allow control of content width at a per-block level. With
 it, it is possible to set blocks to full-width, 'normal' column width and narrow width. The maximum
-width will be limited by the page template layout which, in the Toecaps theme is 100% of the screen
-width. Content width should be controlled at a content creation level, not a theme development level!
+width will be limited by the page template layout, which is why this container should be used with
+full-width template for maximum flexibility. Content width should be controlled at a content-
+creation level, not a theme development level!
 
 This is a _very_ simple plugin designed to be unobtrusive and somewhat free of design opinion. Due
 to it's simplicity, there are few dependencies and a tiny footprint.

@@ -5,7 +5,7 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.toecapsContainer {
+.bigupContainer {
 	position: relative;
 	max-width: 100%;
 	padding-right: 24px;
@@ -16,50 +16,50 @@
 
 @media (min-width: 768px) {
 
-	.toecapsContainer {
+	.bigupContainer {
 		width: 100%;
 	}
 }
 
 @media (min-width: 1024px) {
 
-	.toecapsContainer {
+	.bigupContainer {
 		width: 984px;
 	}
 }
 
 @media (min-width: 1280px) {
 
-	.toecapsContainer {
+	.bigupContainer {
 		width: 1160px;
 	}
 }
 
 @media (min-width: 1536px) {
 
-	.toecapsContainer {
+	.bigupContainer {
 		width: 1280px;
 	}
 }
 
-.toecapsContainer-full {
+.bigupContainer-full {
 	width: 100%;
 }
 
-.toecapsContainer-narrow {
+.bigupContainer-narrow {
 	width: 100%;
 }
 
 @media (min-width: 768px) {
 
-	.toecapsContainer-narrow {
+	.bigupContainer-narrow {
 		width: 768px;
 	}
 }
 
 @media (min-width: 1536px) {
 
-	.toecapsContainer-narrow {
+	.bigupContainer-narrow {
 		width: 1024px;
 	}
 }
