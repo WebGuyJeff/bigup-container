@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Bigup Container
+ * Plugin Name:       Bigup Web: Container
  * Description:       An adjustable width container block to easily create mixed-width pages.
  * Requires at least: 5.8
  * Requires PHP:      7.0

@@ -1,4 +1,4 @@
-=== Bigup Container ===
+=== Bigup Web: Container ===
 Contributors:      Jefferson Real
 Tags:              block, container, section, layout, full-width
 Tested up to:      5.9
