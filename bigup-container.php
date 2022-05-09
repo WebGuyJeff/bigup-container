@@ -37,7 +37,7 @@ function create_block_bigup_container_block_init() {
 	register_block_type(
 		__DIR__ . '/build',
 		array(
-			'icon' => 'bigup-boot', /* omit 'dashicons-' prefix */
+			'icon' => 'bigup-logo', /* omit 'dashicons-' prefix */
 		)
 	);
 }
