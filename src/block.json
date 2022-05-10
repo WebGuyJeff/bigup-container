@@ -4,7 +4,7 @@
 	"name": "create-block/bigup-container",
 	"version": "0.1.0",
 	"title": "Bigup Container",
-	"category": "widgets",
+	"category": "design",
 	"description": "An adjustable width container block to easily create mixed-width pages.",
 	"supports": {
 		"html": false

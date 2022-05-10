@@ -42,9 +42,9 @@ add_action( 'admin_enqueue_scripts', 'bigup_container_load_admin_scripts_and_sty
  */
 function create_block_bigup_container_block_init() {
 	register_block_type(
-		__DIR__ . '/build',
+		__DIR__ . '/build', 		// Path to block.json DIR.
 		array(
-			'icon' => 'bigup-logo', /* omit 'dashicons-' prefix */
+			'icon' => 'bigup-logo', // Omit 'dashicons-' prefix.
 		)
 	);
 }
