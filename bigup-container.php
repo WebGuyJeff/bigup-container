@@ -1,16 +1,23 @@
 <?php
 /**
  * Plugin Name:       Bigup Web: Container
+ * Plugin URI: https://jeffersonreal.uk
  * Description:       An adjustable width container block to easily create mixed-width pages.
  * Requires at least: 5.8
  * Requires PHP:      7.0
  * Version:           0.1.0
- * Author:            The WordPress Contributors
+ * Author: Jefferson Real
+ * Author URI: https://jeffersonreal.uk
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       bigup-container
  *
- * @package           create-block
+ * @package bigup_container
+ * @version 0.1.0
+ * @author Jefferson Real <me@jeffersonreal.uk>
+ * @copyright Copyright (c) 2022, Jefferson Real
+ * @license GPL2+
+ * @link https://jeffersonreal.uk
  */
 
 /**
