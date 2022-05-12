@@ -17,7 +17,7 @@
 		"containerClasses": {
 			"type": "string",
 			"enum": [ "bigupContainer", "bigupContainer bigupContainer-full", "bigupContainer bigupContainer-narrow" ],
-			"default": "container"
+			"default": "bigupContainer"
 		}
 	}
 }
