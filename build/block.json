@@ -1,23 +1,27 @@
 {
-	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 2,
-	"name": "create-block/bigup-container",
-	"version": "0.1.0",
-	"title": "Bigup Container",
-	"category": "design",
-	"description": "An adjustable width container block to easily create mixed-width pages.",
-	"supports": {
-		"html": false
-	},
-	"textdomain": "bigup-container",
-	"editorScript": "file:./index.js",
-	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css",
-	"attributes": {
-		"containerClasses": {
-			"type": "string",
-			"enum": [ "bigupContainer", "bigupContainer bigupContainer-full", "bigupContainer bigupContainer-narrow" ],
-			"default": "bigupContainer"
-		}
-	}
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "create-block/bigup-container",
+  "version": "0.1.0",
+  "title": "Bigup Container",
+  "category": "design",
+  "description": "An adjustable width container block to easily create mixed-width pages.",
+  "supports": {
+    "html": false
+  },
+  "textdomain": "bigup-container",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "containerClasses": {
+      "type": "string",
+      "enum": [
+        "bigupContainer",
+        "bigupContainer bigupContainer-full",
+        "bigupContainer bigupContainer-narrow"
+      ],
+      "default": "bigupContainer"
+    }
+  }
 }
